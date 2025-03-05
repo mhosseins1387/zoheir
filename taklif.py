@@ -18,7 +18,6 @@ def fool(n):
         print('')
 n = int(input("enter perpendicular triangle's height : "))
 fool(n)
-
  
 # مثلث متساوی الاضلاع
 def fol(n):
