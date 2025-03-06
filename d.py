@@ -10,7 +10,7 @@ def printTo(x):
  elif 51<=x<=100 : 
  	print('(acceptable)')
  elif 101<=x<=150 :
- 	print('(unhealthy<for a special group>')
+ 	print('(unhealthy<for a special group>)')
  elif 151<=x<=200 :
  	print('(unleahthy)')
  elif 200<=x<=251 :
@@ -25,4 +25,3 @@ print(f'last day it was at {p.string}', end='')
 printTo(int(p.string))
 
 
-# print(y.prettify())
