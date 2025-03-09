@@ -48,3 +48,18 @@ for i in range(2*n):
     print('*',end='')
 print('*')
 lof(n)
+
+x= int(input())
+for i in range(x):
+    for y in range(x-i-1):
+        print(' ',end='')
+    for c in range(i):
+        print('* ',end='')
+    print('*')
+p = x -1
+for i in range(p):
+    for u in range(i+1):
+        print(' ',end='')
+    for v in range(p-i-1):
+        print('*',end=" ")
+    print('*')
