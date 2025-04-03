@@ -11,8 +11,7 @@ time.sleep(1.75)
 a = int(input('tedad bazikonan : '))
 if a < 5 :
     exit('NEMISHE . tedad player ha khayli baray 5 nash darid...')
-elif a > 12 :
-    exit('NEMISHE . playera ziyadan . had aksar 12 player...')
+time.sleep(0.7)
 b = int(input('tedad mafia : '))
 if a//3  < b:
     print('NEMISHE . MAFIA ZIADE!!!')
@@ -33,7 +32,7 @@ for i in range(len(players)-1):
         if players[i]==players[x]:
             exit(f'NEMISHE . esm bazikon {i+1} ba bazikon {x+1} yekie...')
 time.sleep(0.7)
-print('khayli khoob . hala vassta nagsh haro pakhsh konam...')
+
 
 
 # intruducing the roles
@@ -88,5 +87,71 @@ print('tak tir andaz :')
 print(tak_tir)
 time.sleep(2)
 print('tamami shahvand ha :')
-print(city_all)
+print(city)
 time.sleep(2)
+ENTER = input('havaght tamoom shod . baraye edame (ENTER) ra bezanid...')
+print('khayli khoob . hala bazi shoroo mishavad...')
+
+
+
+# game counters
+day = 1
+night = 1
+death = []
+mafia_death = []
+city_death = []
+karagah_death = []
+doctor_death = []
+tak_tir_death = []
+
+
+#the first night
+print(f'shabe aval :')
+time.sleep(1)
+print('mafia ha bidar shavand va be modat 10 sanie ba hamdigar ashna mishavand...')
+time.sleep(10)
+print('vagt tamam shod . hala mafia bekhabad ...')
+time.sleep(3)
+print('shab aval tamam shod . hala sobh aval shoroo mishavad...')
+time.sleep(2)
+night += 1
+
+
+# the first day
+print(f'sobh aval :')
+time.sleep(1)
+print('shahvand ha bidar shavand va be modat 15 sanie ba hamdigar ashna mishavand...')
+time.sleep(6)
+for i in range(len(players)):
+    print(f'bazikon shomare {i + 1} : 15 sanie sohbat darad...')
+    time.sleep(0)
+    print('vaght tamam shod...')
+    time.sleep(2)
+print('rooz aval tamam shod . hala shab dovom shoroo mishavad...')
+time.sleep(2)
+day += 1
+
+
+# game loop
+while True:
+
+
+    # night
+    print(f'shabe {night} :')
+    time.sleep(1)
+    print('mafia ha bidar shavand va az mian shahrvand ha yeki ra bayar koshtan entekhab konnand...')
+    print(only_city)
+    time.sleep(2)
+    kill_choice = input('esm bazikoni ra ke mikhahid bokoshid vared konid : ')
+    while kill_choice not in only_city:
+        kill_choice = input('esm bazikon ra DOROST vared konid : ')
+    while kill_choice in mafia:
+        kill_choice = input('mafia nemitavanad khodash ra bokoshad . lotfan yek shahrvand ra entekhab konid : ')
+    while kill_choice in death:
+        kill_choice = input('in shahrvand ghablan koshte shode ast . lotfan yek shahrvand digar ra entekhab konid : ')
+    death.append(kill_choice)
+    city_death.append(kill_choice)
+    only_city.remove(kill_choice)
+    time.sleep(2)
+    print(only_city)
+    print(death)
