@@ -10,6 +10,6 @@
 # i = [1,2,3]
 # if l == i:
 #     print('yes')
-l = []
-if l == []:
-    print(1)
+l = input()
+if l == '':
+    print(3)
