@@ -153,25 +153,18 @@ while True:
     while kill_choice in death or city_death or karagah_death or doctor_death or tak_tir_death:
         kill_choice = input('in shahrvand ghablan koshte shode ast . lotfan yek shahrvand digar ra entekhab konid : ')
     time.sleep(0.5)
-    death.append(kill_choice)
-    only_city.remove(kill_choice)
-    if kill_choice in only_city:
-        city_death.append(kill_choice)
-    if kill_choice in karagah:
-        karagah_death.append(kill_choice)
-    if kill_choice in doctor:
-        doctor_death.append(kill_choice)
-    if kill_choice in tak_tir:
-        tak_tir_death.append(kill_choice)
     print(f'{kill_choice} koshte shod ... mafia ha bekhaban.')
     time.sleep(6.125)
     # karagah
     print('karagah bidar she')
     deley(1.25)
     print(only_city)
-    estelam = input('lotfan esm fardi ke mikhahid estelam begirid vared konid : ')
+    estelam = input('lotfan esm fardi ke mikhahid estelam begirid vared konid (agar morde ast , enter bezanin): ')
     while estelam not in players:
-        estelam = input('esm fard eshtebah bood . esm dorost ra vared konid : ')
+        if estelam == '':
+            continue
+        else:
+            estelam = input('esm fard eshtebah bood . esm dorost ra vared konid : ')
     while estelam in death:
         estelam = input('in fard khoshte shode ast . lotfan fard digari ra entekhab konid : ')
     if estelam in mafia :
@@ -183,5 +176,25 @@ while True:
     # doctor
     print('doctor bidar she')
     deley(2)
-     
-
+    save = input('che kasi ro mikhahid nejat dahid (agar morde ast , enter bezanin): ')
+    while save not in players or save in death :
+        if save == '':
+            continue
+        else: 
+            save=input('esm eshtebah bood. dobare vared konin :')
+    if doctor in doctor_choices:
+        while save == doctor[0] :
+            print('khodetan ra nemitavanid bish az yekbar save konin')
+            save=input('shakhs digari ra save konin : ')
+    print('khayli khob . doctor bekhabad...')
+    time.sleep(2)
+    # taktir
+    print('taktir andas bidar she')
+    deley(3)
+    tak_choice = input('aya mikhahid kasi ra bokoshid[yes/no](agar morde ast ,enter ra bezanid):')
+    while tak_choice not in players or tak_choice in death:
+        if tak_choice=='':
+            continue
+        else:
+            tak_choice=input("esm eshtebah bood lotfan dobare wared konin")
+    # operational conclusion
