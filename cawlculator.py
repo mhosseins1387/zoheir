@@ -1,3 +1,8 @@
+# lybraries
+import time
+from time import sleep as delay
+
+
 # operations
 ops = ['+','-','x','/']
 def sum(a,b):
@@ -7,14 +12,18 @@ def sub(a,b):
 def mult(a,b):
     return int(a ) * int(b)
 def div(a,b):
-    return int(a) / int(b)
+    if int(b) != 0 :
+        return int(a) / int(b)
+    else:
+        print("sorry . Can't divide something by zero . try something else...")
+        time.sleep(2)
 def correct(op,a,b):
     if op not in ops:
         return False
     else:
         return True 
     try:
-        int(a,b)
+        float(a,b)
         return True
     except ValueError:
         return False
